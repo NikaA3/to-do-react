@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/to-do-react/static/css/main.c9528ce7.css",
+    "main.js": "/to-do-react/static/js/main.a49f9950.js",
+    "static/media/sergey-shmidt-koy6FlCCy5s-unsplash.jpg": "/to-do-react/static/media/sergey-shmidt-koy6FlCCy5s-unsplash.624349ed01b920f8b7c5.jpg",
+    "index.html": "/to-do-react/index.html",
+    "static/media/tick.svg": "/to-do-react/static/media/tick.6eab33f34a75a5c1af67.svg",
+    "static/media/Vector.svg": "/to-do-react/static/media/Vector.32cda3644df5d2a48b7d26686be862c9.svg",
+    "main.c9528ce7.css.map": "/to-do-react/static/css/main.c9528ce7.css.map",
+    "main.a49f9950.js.map": "/to-do-react/static/js/main.a49f9950.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9528ce7.css",
+    "static/js/main.a49f9950.js"
+  ]
+}
