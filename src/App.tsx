@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { ChangeEvent, useState } from "react";
+import styles from "./App.module.css";
+import { todo } from "./Components/interfaceTodo";
+import Task from "./Components/Task/Task";
+import Header from "./Components/Header/Header";
 
-function App() {
+const App = () => {
+  const [input, setInput] = useState<string>("");
+  const [toDos, setToDos] = useState<todo[]>([]);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  const addTodo = () => {
+    if (input.length === 0) {
+      return;
+    } else {
+      setToDos([...toDos, { text: input, createdAt: new Date() }]);
+    }
+
+    setInput("");
+  };
+
+  const deleteTask = (taskName: string): void => {
+    setToDos(
+      toDos.filter((task) => {
+        return task.text !== taskName;
+      })
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <div className={styles.text}>Todo</div>
+      <div className={styles.todo}>
+        <Header />
+        <div className={styles.body}>
+          <div className={styles.wrapper}>
+            <input
+              type="text"
+              onChange={handleChange}
+              value={input}
+              className={styles.input}
+              placeholder="Note"
+            />
+            <button
+              onClick={addTodo}
+              className={input.length === 0 ? styles.disabled : styles.addBtn}
+            >
+              +
+            </button>
+          </div>
+          {toDos.map((item: todo, index: number) => {
+            return <Task index={index} item={item} deleteTask={deleteTask} />;
+          })}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,71 @@
+.taskWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.taskValue {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.taskValueCrossed {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: line-through;
+}
+
+.timeValue {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #888888;
+}
+
+.completed {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #20eeb0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.checked {
+  background-image: url("../../Images/tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 22px;
+  height: 22px;
+  background-color: #20eeb0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logoBtn {
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.leftSide {
+  padding: 10px 15px;
+}
+
+.rightSide {
+  padding: 10px 15px;
+  display: flex;
+}
+
+@media (min-width: 800px) {
+  .rightSide {
+    padding: 15px 20px;
+    display: flex;
+  }
+}
